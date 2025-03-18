@@ -1,6 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Blog Post Categories
+
+A Next.js application that displays blog posts organized by categories. Users can favorite categories and filter posts based on their selections.
+
+## Features
+
+- View posts by categories
+- Mark categories as favorites
+- Filter posts by favorite categories
+- Responsive design
+- Persistent storage for user preferences
+
+## Tech Stack
+
+- Next.js 14
+- TypeScript
+- TanStack Query
+- Zustand
+- Tailwind CSS
 
 ## Getting Started
+
+1. Install dependencies:
+```bash
+npm install
+```
 
 First, run the development server:
 
