@@ -4,12 +4,8 @@ import { apiClient } from '@/lib/api';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import clsx from 'clsx';
 import { useStore } from '@/store';
-
-interface Category {
-  id: string;
-  name: string;
-  favorite: boolean;
-}
+import { Category } from '@/types';
+import { TEXTS } from '@/constants/texts';
 
 interface CategoryListProps {
   categories: Category[];
@@ -55,7 +51,7 @@ export const CategoryList = ({ categories }: CategoryListProps) => {
           )}
         >
           <StarIconSolid className="h-5 w-5 text-yellow-400" />
-          <span>Show Favorites Only</span>
+          <span className='cursor-pointer'>{TEXTS.CATEGORIES.FAVORITES}</span>
         </button>
       </div>
 
@@ -66,15 +62,15 @@ export const CategoryList = ({ categories }: CategoryListProps) => {
             className={clsx(
               'flex items-center justify-between p-4 rounded-lg cursor-pointer',
               selectedCategoryId === category.id
-                ? 'bg-green-950 text-green-100'
-                : 'bg-white hover:bg-gray-50'
+                ? 'bg-emerald-800 text-white'
+                : 'bg-white hover:bg-emerald-50'
             )}
             onClick={() => setSelectedCategory(category.id)}
           >
             <span className="font-medium">{category.name}</span>
             <button
               onClick={(e) => handleFavoriteClick(e, category)}
-              className="p-1 hover:bg-gray-100 rounded-full"
+              className="p-1 hover:bg-emerald-200 rounded-full"
             >
               {category.favorite ? (
                 <StarIconSolid className="h-5 w-5 text-yellow-400" />

@@ -10,7 +10,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="text-gray-700">
         <Providers>{children}</Providers>
       </body>
     </html>
